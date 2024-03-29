@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 
 @Component({
   selector: 'app-tea-detail',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './tea-detail.component.scss'
 })
 export class TeaDetailComponent {
+  @Input("id") detailID!: String
 
 }
