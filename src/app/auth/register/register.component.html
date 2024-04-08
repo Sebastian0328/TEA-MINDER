@@ -1,1 +1,17 @@
-<p>register works!</p>
+<div>
+  <form [formGroup]="register" (ngSubmit)="enviar()">
+    <label for="name">NOMBRE</label>
+    <input type="text" id="name" formControlName="name" >
+    <div class="invalid-feedback" *ngIf="hasErros('name', 'requerid')">Nombre requerido </div>
+    <label for="email">INGRESE CORREO</label >
+    <input type="email" name="" id="email" formControlName="email" >
+    <div class="invalid-feedback" *ngIf="hasErros('email', 'email')">Correo incorrecto</div>
+    <div class="invalid-feedback" *ngIf="hasErros('email', 'requerid')">Correo requerido</div>
+    <label for="password">CREA CONTRASEÑA</label>
+    <input type="password"  id="password" formControlName="password">
+<div class="invalid-feedback" *ngIf="hasErros('password', 'minlength')"> Contraseña menos a 8 carracteres</div>
+<div class="invalid-feedback" *ngIf="hasErros('password', 'requerid')"> Contraseña requerida</div>
+    <button type="submit">REGISTRARME</button>
+
+  </form>
+</div>

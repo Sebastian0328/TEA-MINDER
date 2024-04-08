@@ -1,1 +1,17 @@
-<p>login works!</p>
+<div>
+  <form  [formGroup]="login" (ngSubmit)="enviar()">
+    <label for="email">
+      CORREO
+    </label>
+    <input type="email" placeholder="INGRESE E-MAIL" id="email"  formControlName="email">
+    <div class="invalid-feedback" *ngIf="hasErros('email', 'email')">Correo incorrecto</div>
+    <div class="invalid-feedback" *ngIf="hasErros('email', 'requerid')">Correo requerido</div>
+
+    <label for="pasword">
+      CONTRASEÑA
+    </label>
+    <input type="password" placeholder="INGRESE CONTRASEÑA" id="pasword" formControlName="password">
+    <div class="invalid-feedback" *ngIf="hasErros('password', 'requerid')"> Contraseña requerida</div>
+    <button type="submit">INICIAR SESION</button>
+  </form>
+</div>
